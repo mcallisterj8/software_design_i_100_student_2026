@@ -10,7 +10,7 @@ public class Automobile : Vehicle {
     }
 
     public virtual void TestMethod() {
-        Console.WriteLine("Test Method!");
+        Console.WriteLine("Automobile Test Method!");
     }
 
     public override void Drive() {

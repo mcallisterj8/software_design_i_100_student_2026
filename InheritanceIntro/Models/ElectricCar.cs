@@ -4,6 +4,7 @@ public class ElectricCar : Automobile {
     public ElectricCar(string licensePlate, int seatingCapacity, int batteryCapacity)
         : base(licensePlate, seatingCapacity, true) // Calling the base class constructor
     {
+        Console.WriteLine("ElectricCar constructor!");
         this.BatteryCapacity = batteryCapacity;
     }
 
@@ -12,7 +13,7 @@ public class ElectricCar : Automobile {
     }
 
     public override void TestMethod() {
-        Console.WriteLine("Test Method");
+        Console.WriteLine("ElectricCar Test Method");
     }
 
     // You can also override methods from the Automobile class if needed
