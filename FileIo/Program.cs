@@ -8,7 +8,7 @@
 string filePath = "./lorem_ipsum.txt";
 string fileContents = File.ReadAllText(filePath);
 
-Console.WriteLine($"\nFile Contents:\n\n{fileContents}\n");
+// Console.WriteLine($"\nFile Contents:\n\n{fileContents}\n");
 
 /**************************************
     WRITING TO TEXT FILE
@@ -51,5 +51,21 @@ string json = File.ReadAllText(jsonFilePath);
 // Just like JSON.parse();
 Company? companyA = JsonSerializer.Deserialize<Company>(json);
 
-Console.WriteLine($"\n\nCompany Name: {companyA.name}");
+Console.WriteLine($"\n\nCompany Name: {companyA.Name}");
 
+Employee singleEmployee = companyA.Employees[0];
+
+Console.WriteLine($"Employee BEFORE: {singleEmployee.FullName} | Position: {singleEmployee.Position.Description}\n");
+
+singleEmployee.Position.Description = "Software Engineer";
+
+Console.WriteLine($"Employee AFTER: {singleEmployee.FullName} | Position: {singleEmployee.Position.Description}\n");
+
+// Options to format the JSON file
+var options = new JsonSerializerOptions { WriteIndented = true };
+
+// Serialize / string the company object back to JSON
+string updatedJson = JsonSerializer.Serialize(companyA, options);
+
+// Write the JSON back out to the file
+File.WriteAllText(jsonFilePath, updatedJson);
