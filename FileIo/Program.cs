@@ -1,7 +1,10 @@
-﻿
+﻿using System.Text.Json;
+
 /**************************************
     READING FROM TEXT FILE
 **************************************/
+
+
 string filePath = "./lorem_ipsum.txt";
 string fileContents = File.ReadAllText(filePath);
 
@@ -40,4 +43,13 @@ File.WriteAllText(pathToFormatFile, formatContent);
     READING FROM JSON
 **************************************/
 
+string jsonFilePath = "./company_info.json";
+string json = File.ReadAllText(jsonFilePath);
+
+// Console.WriteLine($"\n\n{json}");
+
+// Just like JSON.parse();
+Company? companyA = JsonSerializer.Deserialize<Company>(json);
+
+Console.WriteLine($"\n\nCompany Name: {companyA.name}");
 
