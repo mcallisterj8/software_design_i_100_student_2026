@@ -1,18 +1,21 @@
 ﻿using System.Text.Json;
 
+EmployeeWriter writer
+    = new EmployeeWriter { DirPath = "./Employees" };
+
 string jsonFilePath = "./company_info.json";
 string json = File.ReadAllText(jsonFilePath);
 
-// Like JSON.parse() in JavaScript
 Company? companyA
     = JsonSerializer.Deserialize<Company>(json);
 
-Employee singleEmployee = companyA.Employees[1];
+Employee singleEmployee = companyA.Employees[0];
+EmployeeOptions empOptions
+    = new EmployeeOptions { IncludePosition = true, IncludeBenefits = false };
 
-EmployeeWriter writer = new EmployeeWriter { DirPath = "./Employees" };
+// writer.Write(singleEmployee, empOptions);
 
-// Call the Write() method on writer and pass in the Employee.
-writer.Write(singleEmployee);
+writer.WriteAll(companyA.Employees, empOptions);
 
-
+// Console.WriteLine($"\nCurrent Location: {Directory.GetCurrentDirectory()}\n");
 
