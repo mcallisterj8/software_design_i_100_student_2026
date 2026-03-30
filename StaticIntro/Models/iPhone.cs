@@ -11,7 +11,7 @@ public class iPhone
 
     public iPhone()
     {
-        TotalPhonesCreated++;
+        iPhone.TotalPhonesCreated++;
     }
 
     public void CompanyName()
