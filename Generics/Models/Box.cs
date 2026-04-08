@@ -1,5 +1,3 @@
-namespace GenericsExamples.Models;
-
 public class Box<T> {
     public required string Name { get; set; }
     public required T Item { get; set; }
@@ -14,10 +12,6 @@ public class Box<T> {
         }
 
         return output;
-    }
-
-    public T SomeMethod() {
-        return this.Item;
     }
 
 }
