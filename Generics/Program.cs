@@ -31,8 +31,8 @@ boxD.ItemList.Add(phoneF);
 
 Console.WriteLine($"\n\n{boxD}\n\n");
 
-
-SmartBox<int> example =
-    new SmartBox<int> { Name = "example", Item = 8 };
+// Below will result in compilation error since int does not extend Phone
+// SmartBox<int> example =
+//     new SmartBox<int> { Name = "example", Item = 8 };
 
 
