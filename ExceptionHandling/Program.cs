@@ -1,4 +1,5 @@
-﻿Console.WriteLine("============================================================");
+﻿
+Console.WriteLine("============================================================");
 Console.WriteLine("EXAMPLE 1: Divide By Zero");
 Console.WriteLine("============================================================");
 
@@ -29,6 +30,9 @@ try {
     Console.WriteLine("A format exception occurred.");
     Console.WriteLine("The input could not be converted into an integer.");
     Console.WriteLine($"Message: {ex.Message}");
+    throw new FormatException(ex.Message);
+} finally {
+    Console.WriteLine("\nIN THE FINALLY BLOCK\n");
 }
 
 
