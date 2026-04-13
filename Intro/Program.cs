@@ -8,7 +8,3 @@ x = 12;
 Console.WriteLine($"(2) y = {y}\n\n"); // what is y?
 
 
-string example = null;
-
-int length = example.Length;
-
