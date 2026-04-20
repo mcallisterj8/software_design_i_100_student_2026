@@ -1,9 +1,9 @@
 public class Airplane {
     public string? Name { get; set; }
     public string? Airline { get; set; }
-    public int NumEngines { get;set; }
+    public int NumEngines { get; set; }
 
-    public Airplane() {}
+    public Airplane() { }
 
     public Airplane(string givenName, int givenNumEngines) {
         this.Name = givenName;
@@ -32,3 +32,5 @@ public class Airplane {
     // }
 
 }
+
+
